@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UMKM Nusantara | Produk Lokal Berkualitas</title>
+    <meta
+      name="description"
+      content="Website UMKM Nusantara untuk memperkenalkan produk lokal, usaha mikro, kecil, dan menengah."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #ff7a00;
+        --primary-dark: #e76700;
+        --secondary: #1f3a5f;
+        --accent: #fef3e8;
+        --bg: #fffaf5;
+        --white: #ffffff;
+        --text: #1d1d1f;
+        --muted: #5e6475;
+        --border: #f0e5dc;
+        --shadow: 0 20px 40px rgba(31, 58, 95, 0.08);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      .container {
+        width: min(1120px, calc(100% - 2rem));
+        margin: 0 auto;
+      }
+
+      .section {
+        padding: 90px 0;
+      }
+
+      .section-tag {
+        display: inline-block;
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--primary-dark);
+        background: var(--accent);
+        padding: 0.5rem 0.9rem;
+        border-radius: 999px;
+        margin-bottom: 1rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .section-heading {
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+
+      .section-heading h2 {
+        font-size: clamp(2rem, 3vw, 3rem);
+        line-height: 1.2;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255, 250, 245, 0.85);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(31, 58, 95, 0.06);
+      }
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 80px;
+        gap: 1.5rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-weight: 800;
+        font-size: 1.1rem;
+        color: var(--secondary);
+      }
+
+      .logo-mark {
+        width: 36px;
+        height: 36px;
+        display: grid;
+        place-items: center;
+        margin-right: 0.6rem;
+        background: linear-gradient(135deg, var(--primary), #ffb15c);
+        color: var(--white);
+        border-radius: 12px;
+        font-weight: 800;
+      }
+
+      .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        font-weight: 600;
+        color: var(--secondary);
+      }
+
+      .nav-menu a {
+        transition: color 0.2s ease;
+      }
+
+      .nav-menu a:hover {
+        color: var(--primary);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.9rem 1.5rem;
+        border-radius: 999px;
+        border: none;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        color: var(--white);
+        box-shadow: 0 12px 24px rgba(255, 122, 0, 0.25);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--secondary);
+        border: 1px solid rgba(31, 58, 95, 0.15);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(31, 58, 95, 0.03);
+      }
+
+      .hero {
+        padding: 80px 0 50px;
+      }
+
+      .hero-content {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: 3rem;
+      }
+
+      .hero-text h1 {
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        line-height: 1.05;
+        color: var(--secondary);
+        margin-bottom: 1rem;
+      }
+
+      .hero-text p {
+        max-width: 560px;
+        font-size: 1.08rem;
+        color: var(--muted);
+        margin-bottom: 2rem;
+      }
+
+      .badge {
+        display: inline-block;
+        background: var(--accent);
+        color: var(--primary-dark);
+        font-weight: 700;
+        border-radius: 999px;
+        padding: 0.5rem 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .hero-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .hero-stats div {
+        min-width: 110px;
+      }
+
+      .hero-stats strong {
+        display: block;
+        font-size: 1.8rem;
+        color: var(--secondary);
+      }
+
+      .hero-stats span {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      .hero-visual {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card-feature {
+        background: var(--white);
+        width: min(440px, 100%);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+        padding: 1rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card-feature img {
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+
+      .mini-tag {
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
+        background: rgba(255, 255, 255, 0.9);
+        color: var(--secondary);
+        padding: 0.5rem 0.8rem;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        z-index: 2;
+      }
+
+      .card-info {
+        padding: 1rem 0.5rem 0.2rem;
+      }
+
+      .card-info h3 {
+        font-size: 1.4rem;
+        color: var(--secondary);
+      }
+
+      .card-info p {
+        font-size: 1.1rem;
+        color: var(--primary-dark);
+        font-weight: 700;
+      }
+
+      .floating-badge {
+        position: absolute;
+        bottom: 1rem;
+        right: -1rem;
+        background: var(--secondary);
+        color: var(--white);
+        font-weight: 700;
+        padding: 0.8rem 1rem;
+        border-radius: 999px;
+        box-shadow: var(--shadow);
+      }
+
+      .brands {
+        background: #fff;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .brands-row {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(120px, 1fr));
+        gap: 1rem;
+        align-items: center;
+        text-align: center;
+        color: var(--muted);
+        font-weight: 700;
+        padding: 1.2rem 0;
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 3rem;
+      }
+
+      .about-image img {
+        width: 100%;
+        height: 560px;
+        object-fit: cover;
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .about-text h2 {
+        font-size: clamp(2rem, 3vw, 3rem);
+        color: var(--secondary);
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+
+      .about-text p {
+        color: var(--muted);
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .check-list {
+        list-style: none;
+        display: grid;
+        gap: 0.9rem;
+        color: var(--secondary);
+        font-weight: 600;
+      }
+
+      .check-list li {
+        position: relative;
+        padding-left: 2rem;
+      }
+
+      .check-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--primary);
+        font-weight: 900;
+      }
+
+      .filter-bar {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+        margin-bottom: 2rem;
+      }
+
+      .filter-btn {
+        border: none;
+        background: var(--white);
+        color: var(--secondary);
+        padding: 0.75rem 1.1rem;
+        border-radius: 999px;
+        font-weight: 700;
+        box-shadow: 0 10px 20px rgba(31, 58, 95, 0.05);
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .filter-btn.active,
+      .filter-btn:hover {
+        background: var(--secondary);
+        color: var(--white);
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2rem;
+      }
+
+      .product-card {
+        background: var(--white);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 14px 30px rgba(31, 58, 95, 0.06);
+        transition: transform 0.25s ease;
+      }
+
+      .product-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+      }
+
+      .product-body {
+        padding: 1.3rem;
+      }
+
+      .category {
+        display: inline-block;
+        font-size: 0.76rem;
+        font-weight: 700;
+        color: var(--primary-dark);
+        background: var(--accent);
+        border-radius: 999px;
+        padding: 0.4rem 0.7rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .product-body h3 {
+        color: var(--secondary);
+        margin-bottom: 0.6rem;
+        font-size: 1.4rem;
+      }
+
+      .product-body p {
+        color: var(--muted);
+        margin-bottom: 1rem;
+      }
+
+      .product-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .product-meta strong {
+        color: var(--secondary);
+        font-size: 1.2rem;
+      }
+
+      .product-meta button {
+        border: none;
+        background: var(--primary);
+        color: var(--white);
+        border-radius: 999px;
+        padding: 0.7rem 1rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1.5rem;
+      }
+
+      .feature-card {
+        background: var(--white);
+        border-radius: 24px;
+        padding: 2rem 1.4rem;
+        text-align: center;
+        box-shadow: 0 12px 30px rgba(31, 58, 95, 0.05);
+      }
+
+      .icon {
+        width: 72px;
+        height: 72px;
+        margin: 0 auto 1rem;
+        display: grid;
+        place-items: center;
+        font-size: 2rem;
+        border-radius: 20px;
+        background: var(--accent);
+      }
+
+      .feature-card h3 {
+        color: var(--secondary);
+        margin-bottom: 0.7rem;
+      }
+
+      .feature-card p {
+        color: var(--muted);
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
+      }
+
+      .testimonial-card {
+        background: var(--white);
+        border-radius: 24px;
+        padding: 2rem 1.5rem;
+        box-shadow: 0 12px 30px rgba(31, 58, 95, 0.05);
+      }
+
+      .stars {
+        color: #f9b93c;
+        margin-bottom: 1rem;
+        letter-spacing: 0.15em;
+      }
+
+      .testimonial-card p {
+        color: var(--muted);
+        margin-bottom: 1.5rem;
+      }
+
+      .person {
+        display: flex;
+        flex-direction: column;
+        color: var(--secondary);
+      }
+
+      .person span {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .cta-box {
+        background: linear-gradient(135deg, var(--secondary), #335a8c);
+        color: var(--white);
+        border-radius: 28px;
+        padding: 2.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
+        box-shadow: var(--shadow);
+      }
+
+      .cta-box h2 {
+        font-size: clamp(1.8rem, 3vw, 2.8rem);
+        line-height: 1.2;
+      }
+
+      .contact-form {
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        width: min(100%, 500px);
+      }
+
+      .contact-form input {
+        flex: 1 1 180px;
+        padding: 0.9rem 1rem;
+        border: none;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        color: var(--white);
+        outline: none;
+      }
+
+      .contact-form input::placeholder {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .footer {
+        background: #fff;
+        border-top: 1px solid var(--border);
+        margin-top: 1rem;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem 0 1rem;
+        flex-wrap: wrap;
+      }
+
+      .footer p {
+        color: var(--muted);
+        max-width: 360px;
+        margin-top: 0.8rem;
+      }
+
+      .footer-links,
+      .footer-contact {
+        display: grid;
+        gap: 0.6rem;
+        color: var(--secondary);
+        font-weight: 600;
+      }
+
+      .copyright {
+        text-align: center;
+        padding: 1rem 0 2rem;
+        color: var(--muted);
+        border-top: 1px solid var(--border);
+      }
+
+      .nav-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+      }
+
+      .nav-toggle span {
+        width: 26px;
+        height: 3px;
+        background: var(--secondary);
+        border-radius: 10px;
+      }
+
+      @media (max-width: 900px) {
+        .hero-content,
+        .about-content,
+        .product-grid,
+        .feature-grid,
+        .testimonial-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .cta-box {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .nav-toggle {
+          display: flex;
+        }
+
+        .nav-menu,
+        .nav-cta {
+          display: none;
+        }
+
+        .nav-menu.active {
+          display: flex;
+          position: absolute;
+          top: 80px;
+          left: 1rem;
+          right: 1rem;
+          flex-direction: column;
+          background: rgba(255, 255, 255, 0.96);
+          padding: 1rem;
+          border-radius: 18px;
+          box-shadow: var(--shadow);
+        }
+
+        .nav-menu.active a {
+          padding: 0.5rem 0;
+        }
+
+        .nav-cta.active {
+          display: inline-flex;
+          position: absolute;
+          top: 290px;
+          left: 1rem;
+          right: 1rem;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .hero-content,
+        .about-content,
+        .product-grid,
+        .feature-grid,
+        .testimonial-grid,
+        .brands-row {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-text h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-stats {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .card-feature img {
+          height: 300px;
+        }
+
+        .contact-form {
+          width: 100%;
+        }
+
+        .section {
+          padding: 70px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar container">
+        <div class="logo">
+          <span class="logo-mark">U</span>
+          <span>UMKM Nusantara</span>
+        </div>
+
+        <button class="nav-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-menu">
+          <a href="#home">Beranda</a>
+          <a href="#about">Tentang</a>
+          <a href="#products">Produk</a>
+          <a href="#why-us">Kenapa Kami</a>
+          <a href="#testimonials">Testimoni</a>
+          <a href="#contact">Kontak</a>
+        </div>
+
+        <a href="#contact" class="btn btn-primary nav-cta">Pesan Sekarang</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-content">
+          <div class="hero-text">
+            <span class="badge">Produk Lokal & Berkualitas</span>
+            <h1>Mendukung UMKM Indonesia</h1>
+            <p>
+              Kami menghadirkan produk pilihan dari pelaku UMKM lokal dengan
+              kualitas terbaik, harga terjangkau, dan semangat gotong royong.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#products" class="btn btn-primary">Lihat Produk</a>
+              <a href="#about" class="btn btn-secondary">Tentang Kami</a>
+            </div>
+
+            <div class="hero-stats">
+              <div>
+                <strong>500+</strong>
+                <span>Produk Terjual</span>
+              </div>
+              <div>
+                <strong>120</strong>
+                <span>Pelaku UMKM</span>
+              </div>
+              <div>
+                <strong>4.9/5</strong>
+                <span>Rating Pelanggan</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="card card-feature">
+              <div class="mini-tag">Best Seller</div>
+              <img
+                src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=800&q=80"
+                alt="Produk UMKM"
+              />
+              <div class="card-info">
+                <h3>Kopi Lokal Premium</h3>
+                <p>Rp 35.000</p>
+              </div>
+            </div>
+            <div class="floating-badge">100% Produk Lokal</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="brands">
+        <div class="container brands-row">
+          <span>Partner UMKM</span>
+          <span>UMKM Bandung</span>
+          <span>Pasar Lokal</span>
+          <span>UMKM Kreatif</span>
+          <span>Produk Asli</span>
+        </div>
+      </section>
+
+      <section class="about section" id="about">
+        <div class="container about-content">
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80"
+              alt="Tim UMKM"
+            />
+          </div>
+
+          <div class="about-text">
+            <span class="section-tag">Tentang Kami</span>
+            <h2>Menyatukan produk lokal dengan pasar yang lebih luas</h2>
+            <p>
+              UMKM Nusantara adalah platform yang membantu pelaku usaha mikro,
+              kecil, dan menengah memperkenalkan produk mereka ke masyarakat
+              luas. Kami percaya bahwa produk lokal memiliki nilai, kualitas,
+              dan cerita yang patut dibanggakan.
+            </p>
+            <ul class="check-list">
+              <li>Produk hasil lokal dengan kualitas terjaga</li>
+              <li>Dukungan pemasaran digital untuk UMKM</li>
+              <li>Komitmen pada inovasi dan keberlanjutan</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="products section" id="products">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-tag">Produk Unggulan</span>
+            <h2>Jelajahi Produk UMKM Pilihan</h2>
+          </div>
+
+          <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="makanan">Makanan</button>
+            <button class="filter-btn" data-filter="kerajinan">Kerajinan</button>
+            <button class="filter-btn" data-filter="minuman">Minuman</button>
+          </div>
+
+          <div class="product-grid">
+            <article class="product-card" data-category="makanan">
+              <img
+                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"
+                alt="Makanan UMKM"
+              />
+              <div class="product-body">
+                <span class="category">Makanan</span>
+                <h3>Brownies Cokelat</h3>
+                <p>Kue lokal dengan rasa autentik dan bahan pilihan.</p>
+                <div class="product-meta">
+                  <strong>Rp 45.000</strong>
+                  <button>Pesan</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="minuman">
+              <img
+                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80"
+                alt="Minuman UMKM"
+              />
+              <div class="product-body">
+                <span class="category">Minuman</span>
+                <h3>Es Teh Melati</h3>
+                <p>Minuman segar dengan cita rasa tradisional yang unik.</p>
+                <div class="product-meta">
+                  <strong>Rp 15.000</strong>
+                  <button>Pesan</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="kerajinan">
+              <img
+                src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80"
+                alt="Kerajinan UMKM"
+              />
+              <div class="product-body">
+                <span class="category">Kerajinan</span>
+                <h3>Vas Bambu Handmade</h3>
+                <p>Produk dekorasi ramah lingkungan buatan tangan lokal.</p>
+                <div class="product-meta">
+                  <strong>Rp 90.000</strong>
+                  <button>Pesan</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="makanan">
+              <img
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"
+                alt="Makanan UMKM"
+              />
+              <div class="product-body">
+                <span class="category">Makanan</span>
+                <h3>Keripik Pisang</h3>
+                <p>Camilan renyah dengan bumbu khas dan bahan alami.</p>
+                <div class="product-meta">
+                  <strong>Rp 20.000</strong>
+                  <button>Pesan</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="minuman">
+              <img
+                src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=80"
+                alt="Minuman UMKM"
+              />
+              <div class="product-body">
+                <span class="category">Minuman</span>
+                <h3>Kopi Robusta</h3>
+                <p>Kopi lokal dengan aroma kuat dan rasa premium.</p>
+                <div class="product-meta">
+                  <strong>Rp 35.000</strong>
+                  <button>Pesan</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="kerajinan">
+              <img
+                src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80"
+                alt="Kerajinan UMKM"
+              />
+              <div class="product-body">
+                <span class="category">Kerajinan</span>
+                <h3>Dompet Anyaman</h3>
+                <p>Produk handmade dengan desain modern dan daya tahan tinggi.</p>
+                <div class="product-meta">
+                  <strong>Rp 75.000</strong>
+                  <button>Pesan</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="why-us section" id="why-us">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-tag">Kenapa Kami</span>
+            <h2>Menghubungkan UMKM dengan peluang yang lebih besar</h2>
+          </div>
+
+          <div class="feature-grid">
+            <div class="feature-card">
+              <div class="icon">🌱</div>
+              <h3>Produk Lokal</h3>
+              <p>Semua produk berasal dari komunitas UMKM dan bahan baku lokal.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="icon">📦</div>
+              <h3>Pengiriman Cepat</h3>
+              <p>Proses pengiriman yang cepat dan efisien untuk pelanggan.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="icon">💬</div>
+              <h3>Pelayanan Ramah</h3>
+              <p>Tim kami siap membantu Anda memilih produk yang paling cocok.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="icon">📈</div>
+              <h3>Ukuran Pasar Luas</h3>
+              <p>Produk UMKM kami siap menjangkau pasar yang lebih luas secara digital.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials section" id="testimonials">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-tag">Testimoni</span>
+            <h2>Apa kata pelanggan?</h2>
+          </div>
+
+          <div class="testimonial-grid">
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>
+                “Produk UMKM-nya berkualitas, pengirimannya cepat, dan saya puas
+                dengan pelayanan yang ramah.”
+              </p>
+              <div class="person">
+                <strong>Rina</strong>
+                <span>Pelanggan</span>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>
+                “Kami merasa terbantu dengan promosi digital ini. Produk lokal
+                kami semakin dikenal masyarakat luas.”
+              </p>
+              <div class="person">
+                <strong>Budi</strong>
+                <span>Pelaku UMKM</span>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>
+                “Desain website dan proses pesanannya sangat mudah. Saya suka
+                betul dengan rasa produk-produknya.”
+              </p>
+              <div class="person">
+                <strong>Siti</strong>
+                <span>Pelanggan</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta section" id="contact">
+        <div class="container cta-box">
+          <div>
+            <span class="section-tag">Hubungi Kami</span>
+            <h2>Siap dukung produk lokal Indonesia?</h2>
+          </div>
+
+          <form class="contact-form">
+            <input type="text" placeholder="Nama Anda" />
+            <input type="email" placeholder="Email Anda" />
+            <button type="submit" class="btn btn-primary">Kirim</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <div>
+          <div class="logo">
+            <span class="logo-mark">U</span>
+            <span>UMKM Nusantara</span>
+          </div>
+          <p>Mewujudkan produk lokal yang berdaya saing dan bermanfaat.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#about">Tentang</a>
+          <a href="#products">Produk</a>
+          <a href="#why-us">Kenapa Kami</a>
+          <a href="#contact">Kontak</a>
+        </div>
+
+        <div class="footer-contact">
+          <p>Email: hello@umkmnusantara.id</p>
+          <p>WA: +62 812-3456-7890</p>
+        </div>
+      </div>
+
+      <div class="copyright">
+        © <span id="year"></span> UMKM Nusantara. All Rights Reserved.
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggle = document.querySelector(".nav-toggle");
+        const navMenu = document.querySelector(".nav-menu");
+        const navCta = document.querySelector(".nav-cta");
+        const year = document.getElementById("year");
+
+        if (year) {
+          year.textContent = new Date().getFullYear();
+        }
+
+        if (toggle && navMenu) {
+          toggle.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+            if (navCta) navCta.classList.toggle("active");
+          });
+        }
+
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const productCards = document.querySelectorAll(".product-card");
+
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            const filter = button.dataset.filter;
+
+            productCards.forEach((card) => {
+              const category = card.dataset.category;
+              if (filter === "all" || filter === category) {
+                card.style.display = "block";
+              } else {
+                card.style.display = "none";
+              }
+            });
+          });
+        });
+
+        const contactForm = document.querySelector(".contact-form");
+        if (contactForm) {
+          contactForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            alert("Terima kasih! Pesan Anda telah dikirim.");
+            contactForm.reset();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
